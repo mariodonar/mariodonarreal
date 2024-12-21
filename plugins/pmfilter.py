@@ -98,7 +98,7 @@ async def give_filter(client, message):
             return
         else:
             return await message.reply_text(f"<b>Hᴇʏ {message.from_user.mention},\n\nʏᴏᴜʀ ʀᴇǫᴜᴇꜱᴛ ɪꜱ ᴀʟʀᴇᴀᴅʏ ᴀᴠᴀɪʟᴀʙʟᴇ ✅\n\n📂 ꜰɪʟᴇꜱ ꜰᴏᴜɴᴅ : {str(total_results)}\n🔍 ꜱᴇᴀʀᴄʜ :</b> <code>{search}</code>\n\n<b>‼️ ᴛʜɪs ɪs ᴀ <u>sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ</u> sᴏ ᴛʜᴀᴛ ʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ғɪʟᴇs ғʀᴏᴍ ʜᴇʀᴇ...\n\n📝 ꜱᴇᴀʀᴄʜ ʜᴇʀᴇ : 👇</b>",   
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔍 ᴊᴏɪɴ ᴀɴᴅ ꜱᴇᴀʀᴄʜ ʜᴇʀᴇ 🔎", url=f"https://t.me/MoviesLinkSearchBot2")]]))
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔍 ᴊᴏɪɴ ᴀɴᴅ ꜱᴇᴀʀᴄʜ ʜᴇʀᴇ 🔎", url=f"https://t.me/+jH3NZ3VTs5JhN2I1")]]))
 
 @Client.on_message(filters.private & filters.text & filters.incoming)
 async def pm_text(bot, message):
@@ -109,7 +109,7 @@ async def pm_text(bot, message):
     if user_id in ADMINS: return # ignore admins
     await message.reply_text(
          text=f"<b>ʜᴇʏ {user} 😍 ,\n\nʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ᴍᴏᴠɪᴇs ꜰʀᴏᴍ ʜᴇʀᴇ. ʀᴇǫᴜᴇsᴛ ɪᴛ ɪɴ ᴏᴜʀ ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ ʙʏ ᴄʟɪᴄᴋɪɴɢ ᴏɴ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ 👇</b>",   
-         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ", url=f"https://t.me/MoviesLinkSearchBot2")]])
+         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ", url=f"https://t.me/+jH3NZ3VTs5JhN2I1")]])
     )
     await bot.send_message(
         chat_id=LOG_CHANNEL,
@@ -1103,7 +1103,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     
     elif query.data.startswith("checksub"):
         if AUTH_CHANNEL and not await is_req_subscribed(client, query):
-            await query.answer("Jᴏɪɴ ᴏᴜʀ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ ᴍᴀʜɴ! 😒", show_alert=True)
+            await query.answer("Jᴏɪɴ ᴏᴜʀ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ, ᴍᴀɴ! 😒", show_alert=True)
             return
         ident, kk, file_id = query.data.split("#")
         await query.answer(url=f"https://t.me/{temp.U_NAME}?start={kk}_{file_id}")
@@ -1482,7 +1482,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton("🚀 ꜰᴀꜱᴛ ᴅᴏᴡɴʟᴏᴀᴅ", url=lazy_download),
                     InlineKeyboardButton("ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ 🧿", url=lazy_stream)
                 ],[
-                    InlineKeyboardButton('📌 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ 📌', url='https://t.me/HP_MOVIES_WORLD')
+                    InlineKeyboardButton('📌 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ 📌', url='https://t.me/All_In_One_Linkz')
                 ]]
             else:
                 await query.answer("🚸 ɴᴏᴛᴇ :\nᴀᴅ-ꜰʀᴇᴇ ꜱᴇʀᴠɪᴄᴇ ɪꜱ ᴏɴʟʏ ꜰᴏʀ ᴘʀᴇᴍɪᴜᴍ ᴜꜱᴇʀꜱ.\n\nᴛᴏ ᴋɴᴏᴡ ᴍᴏʀᴇ ᴄʜᴇᴄᴋ ᴘʟᴀɴꜱ.", show_alert=True)
@@ -1529,15 +1529,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "start":
         buttons = [[
-                    InlineKeyboardButton('☆ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ☆', url=f'http://telegram.me/{temp.U_NAME}?startgroup=true')
-                ],[
-                    InlineKeyboardButton('💸 ᴇᴀʀɴ ᴍᴏɴᴇʏ 💸', callback_data="shortlink_info"),
                     InlineKeyboardButton('• ᴜᴘᴅᴀᴛᴇꜱ •', callback_data='channels')
                 ],[
                     InlineKeyboardButton('• ᴄᴏᴍᴍᴀɴᴅꜱ •', callback_data='help'),
                     InlineKeyboardButton('• ᴀʙᴏᴜᴛ •', callback_data='about')
-                ],[
-                    InlineKeyboardButton('✨ ʙᴜʏ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅꜱ ✨', callback_data="premium_info")
                   ]]
         
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -1774,15 +1769,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
   
     elif query.data == "channels":
         buttons = [[
-            InlineKeyboardButton('⚜️ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ ⚜️', url='https://t.me/HP_MOVIES_WORLD')
+            InlineKeyboardButton('⚜️ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ ⚜️', url='https://t.me/All_In_One_Linkz')
         ],[
-            InlineKeyboardButton('🔍 ɢʀᴏᴜᴘ¹', url='https://t.me/MoviesLinkSearchBot2'),
-            InlineKeyboardButton('ɢʀᴏᴜᴘ² 🔎', url='https://t.me/MoviesLinkSearchBot3')
+            InlineKeyboardButton('🔍 ɢʀᴏᴜᴘ¹', url='https://t.me/+to0CS22_eqQ3YWM9'),
+            InlineKeyboardButton('ɢʀᴏᴜᴘ² 🔎', url='https://t.me/+jH3NZ3VTs5JhN2I1')
         ],[
-            InlineKeyboardButton('✉️ ʀᴇǫᴜᴇꜱᴛ ɢʀᴏᴜᴘ ✉️', url='https://t.me/HpMovieRequest')
+            InlineKeyboardButton('✉️ ʀᴇǫᴜᴇꜱᴛ ɢʀᴏᴜᴘ ✉️', url='https://t.me/chat_sup_6')
         ],[
             InlineKeyboardButton('⇇ ʙᴀᴄᴋ', callback_data='start'),
-            InlineKeyboardButton('ꜱᴜᴘᴘᴏʀᴛ 👮', url='https://t.me/HpRequestBot')
+            InlineKeyboardButton('ꜱᴜᴘᴘᴏʀᴛ 👮', url='https://t.me/chat_sup_6')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -1848,7 +1843,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ], [
             InlineKeyboardButton ('• ᴄʀᴇᴅɪᴛꜱ ᴛᴏ ᴛʜᴇ ᴅᴇᴠᴇʟᴏᴘᴇʀꜱ •', callback_data='credits'),
         ], [
-            InlineKeyboardButton('• ᴏᴡɴᴇʀ •', user_id=int(767250672)),
+            InlineKeyboardButton('• ᴏᴡɴᴇʀ •', user_id=int(1918079773)),
             InlineKeyboardButton('• ꜱᴛᴀᴛꜱ •', callback_data='stats')
         ], [
             InlineKeyboardButton('🛰️ ʀᴇɴᴅᴇʀɪɴɢ ꜱᴛᴀᴛᴜꜱ ☁️',callback_data='rendr')
@@ -1857,7 +1852,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.ABOUT_TXT.format(temp.B_NAME),
+            text=script.ABOUT_TXT.format(temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -2211,9 +2206,9 @@ async def auto_filter(client, msg, spoll=False):
                 cap += f"<b>\n<a href='https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}'> 📁 {get_size(file.file_size)} ▷ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n</a></b>"
     else:
         if settings["button"]:
-            cap = f"<b>🧿 ᴛɪᴛʟᴇ : <code>{search}</code>\n📂 ᴛᴏᴛᴀʟ ꜰɪʟᴇꜱ : <code>{total_results}</code>\n📝 ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ : {message.from_user.mention}\n⏰ ʀᴇsᴜʟᴛ ɪɴ : <code>{remaining_seconds} Sᴇᴄᴏɴᴅs</code>\n⚜️ ᴘᴏᴡᴇʀᴇᴅ ʙʏ : 👇\n⚡ {message.chat.title} \n\n</b>"
+            cap = f"<b>Rᴇsᴜʟᴛs Fᴏʀ 🔍  <code>{search}</code></b>"
         else:
-            cap = f"<b>🧿 ᴛɪᴛʟᴇ : <code>{search}</code>\n📂 ᴛᴏᴛᴀʟ ꜰɪʟᴇꜱ : <code>{total_results}</code>\n📝 ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ : {message.from_user.mention}\n⏰ ʀᴇsᴜʟᴛ ɪɴ : <code>{remaining_seconds} Sᴇᴄᴏɴᴅs</code>\n⚜️ ᴘᴏᴡᴇʀᴇᴅ ʙʏ : 👇\n⚡ {message.chat.title} \n\n</b>"
+            cap = f"<b>Rᴇsᴜʟᴛs Fᴏʀ 🔍  <code>{search}</code></b>"
             # cap+="<b>Hᴇʏ {message.from_user.mention}, Hᴇʀᴇ ɪs ᴛʜᴇ ʀᴇsᴜʟᴛ ғᴏʀ ʏᴏᴜʀ ᴏ̨ᴜᴇʀʏ {search} \n\n</b>"
             for file in files:
                 cap += f"<b><a href='https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}'> 📁 {get_size(file.file_size)} ▷ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n\n</a></b>"
@@ -2300,7 +2295,7 @@ async def advantage_spell_chok(client, msg):
         if not g_s:
             reqst_gle = query.replace(" ", "+")
             button = [[
-                       InlineKeyboardButton("📝 ʀᴇǫᴜᴇꜱᴛ ʜᴇʀᴇ", url=f"https://t.me/HpMovieRequest")
+                       InlineKeyboardButton("📝 ʀᴇǫᴜᴇꜱᴛ ʜᴇʀᴇ", url=f"https://t.me/+jH3NZ3VTs5JhN2I1")
             ]]
             if NO_RESULTS_MSG:
                 await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
@@ -2337,7 +2332,7 @@ async def advantage_spell_chok(client, msg):
         if not movielist:
             reqst_gle = query.replace(" ", "+")
             button = [[
-                       InlineKeyboardButton("📝 ʀᴇǫᴜᴇꜱᴛ ʜᴇʀᴇ", url=f"https://t.me/HpMovieRequest")
+                       InlineKeyboardButton("📝 ʀᴇǫᴜᴇꜱᴛ ʜᴇʀᴇ", url=f"https://t.me/+jH3NZ3VTs5JhN2I1")
             ]]
             if NO_RESULTS_MSG:
                 await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
@@ -2378,7 +2373,7 @@ async def advantage_spell_chok(client, msg):
             logger.exception(e)
             reqst_gle = mv_rqst.replace(" ", "+")
             button = [[
-                       InlineKeyboardButton("📝 ʀᴇǫᴜᴇꜱᴛ ʜᴇʀᴇ", url=f"https://t.me/HpMovieRequest")
+                       InlineKeyboardButton("📝 ʀᴇǫᴜᴇꜱᴛ ʜᴇʀᴇ", url=f"https://t.me/+jH3NZ3VTs5JhN2I1")
             ]]
             if NO_RESULTS_MSG:
                 await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
@@ -2393,7 +2388,7 @@ async def advantage_spell_chok(client, msg):
         if not movies:
             reqst_gle = mv_rqst.replace(" ", "+")
             button = [[
-                       InlineKeyboardButton("📝 ʀᴇǫᴜᴇꜱᴛ ʜᴇʀᴇ", url=f"https://t.me/HpMovieRequest")
+                       InlineKeyboardButton("📝 ʀᴇǫᴜᴇꜱᴛ ʜᴇʀᴇ", url=f"https://t.me/+jH3NZ3VTs5JhN2I1")
             ]]
             if NO_RESULTS_MSG:
                 await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
