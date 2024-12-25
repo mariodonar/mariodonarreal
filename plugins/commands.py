@@ -60,7 +60,7 @@ async def start(client, message):
         else:
             gtxt = "ɢᴏᴏᴅ ɴɪɢʜᴛ 👋"
         m=await message.reply_text("<i>Error: Something went wrong.\n\nError: Something went wrong.\n\nError: Something went wrong.\n\nError:Something went wrong.\n\nError: Something went wrong.\n\nError: Something went wrong.\n\nError:Something went wrong.\n\nError: Something went wrong.\n\nError: Something went wrong.</i>")
-        await asyncio.sleep(0.4)
+        await asyncio.sleep(0.55)
         await m.edit_text("👀")
         await asyncio.sleep(0.5)
         await m.edit_text("⚡")
@@ -125,7 +125,7 @@ async def start(client, message):
         else:
             gtxt = "ɢᴏᴏᴅ ɴɪɢʜᴛ 👋"
         m=await message.reply_text("<i>Error: Something went wrong.\n\nError: Something went wrong.\n\nError: Something went wrong.\n\nError:Something went wrong.\n\nError: Something went wrong.\n\nError: Something went wrong.\n\nError:Something went wrong.\n\nError: Something went wrong.\n\nError: Something went wrong.</i>")
-        await asyncio.sleep(0.4)
+        await asyncio.sleep(0.55)
         await m.edit_text("👀")
         await asyncio.sleep(0.5)
         await m.edit_text("⚡")
