@@ -153,14 +153,6 @@ async def re_enable_chat(bot, message):
     await message.reply("Chat Successfully re-enabled")
     
 
-def get_size(size_in_bytes):
-    """Convert bytes to a human-readable format."""
-    for unit in ['B', 'KB', 'MB', 'GB', 'TB']:
-        if size_in_bytes < 1024:
-            return f"{size_in_bytes:.2f} {unit}"
-        size_in_bytes /= 1024
-    return f"{size_in_bytes:.2f} PB"
-
 @Client.on_message(filters.command('stats') & filters.incoming)
 async def get_ststs(client, message):
     if message.from_user.id in ADMINS:
@@ -174,16 +166,14 @@ async def get_ststs(client, message):
             size = await db.get_db_size()              # Replace with your database function
 
             # Calculate free space
-            total_db_limit = 536870912  # Example limit (512 MB)
-            free_space = total_db_limit - size
+            free = 536870912 - size
 
             # Convert sizes to human-readable format
             size = get_size(size)
-            free_space = get_size(free_space)
+            free = get_size(free)
 
             # Format and send the response
-            status_text = script.STATUS_TXT.format(files, total_users, total_chats, size, free_space)
-            await rju.edit(status_text)
+            await rju.edit(script.STATUS_TXT.format(files, total_users, totl_chats, size, free))
         except Exception as e:
             # Handle any errors
             await rju.edit(f"⚠️ Error while fetching stats: {e}")
