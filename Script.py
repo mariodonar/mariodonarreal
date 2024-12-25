@@ -16,6 +16,36 @@ class script(object):
 ▫ ғᴀsᴛᴇsᴛ ʙᴏᴛs ᴀʀᴇ ᴀᴅᴅᴇᴅ.
 ▫ ғʀᴇᴇ & ᴇᴀsʏ ᴛᴏ ᴜsᴇ.
 ▫ 𝟸𝟺x𝟽 sᴇʀᴠɪᴄᴇs ᴀᴠᴀɪʟᴀʙʟᴇ.</b>"""
+
+    ERROR_TXT = """Error: Something went wrong.
+Error: Something went wrong.
+Error: Something went wrong.
+Error: Something went wrong.
+Error: Something went wrong.
+Error: Something went wrong.
+Error: Something went wrong.
+Error: Something went wrong.
+Error: Something went wrong.
+Error: Something went wrong.
+Error: Something went wrong.
+Error: Something went wrong.
+Error: Something went wrong.
+Error: Something went wrong.
+Error: Something went wrong.
+Error: Something went wrong.
+Error: Something went wrong.
+Error: Something went wrong.
+Error: Something went wrong.
+Error: Something went wrong.
+Error: Something went wrong.
+Error: Something went wrong.
+Error: Something went wrong.
+Error: Something went wrong.
+Error: Something went wrong.
+Error: Something went wrong.
+Error: Something went wrong.
+Error: Something went wrong.
+"""
     
     STATUS_TXT = """<b>    
 ‣ ᴛᴏᴛᴀʟ ꜰɪʟᴇꜱ : <code>{}</code>
