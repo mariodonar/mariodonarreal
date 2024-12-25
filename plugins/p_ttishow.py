@@ -154,35 +154,16 @@ async def re_enable_chat(bot, message):
     
 
 @Client.on_message(filters.command('stats') & filters.incoming)
-async def get_ststs(client, message):
-    # Check if the user is an admin
-    if message.from_user.id in ADMINS:  # Fixed: Replaced `query.from_user.id` with `message.from_user.id`
-        rju = await message.reply("Fetching stats...")
-
-        try:
-            # Fetch required statistics
-            total_users = await db.total_users_count()  # Replace with your database function
-            total_chats = await db.total_chat_count()  # Replace with your database function
-            files = await Media.count_documents()      # Replace with your database function
-            size = await db.get_db_size()              # Replace with your database function
-
-            # Calculate free space
-            free = 536870912 - size
-
-            # Convert sizes to human-readable format
-            size = get_size(size)
-            free = get_size(free)
-
-            # Format the output message
-            status_text = script.STATUS_TXT.format(files, total_users, total_chats, size, free)
-
-            # Update the initial message with stats
-            await rju.edit(status_text)
-        except Exception as e:
-            await rju.edit(f"⚠️ Error while fetching stats: {e}")
-    else:
-        # Message for non-admin users
-        await message.reply("Sᴏʀʀʏ Tʜɪs Cᴏᴍᴍᴀɴᴅ Oɴʟʏ Fᴏʀ Mʏ Aᴅᴍɪɴs 👀")
+async def get_ststs(bot, message):
+    rju = await message.reply('Fetching stats..')
+    total_users = await db.total_users_count()
+    totl_chats = await db.total_chat_count()
+    files = await Media.count_documents()
+    size = await db.get_db_size()
+    free = 536870912 - size
+    size = get_size(size)
+    free = get_size(free)
+    await rju.edit(script.STATUS_TXT.format(files, total_users, totl_chats, size, free))
 
 
 @Client.on_message(filters.command('invite') & filters.user(ADMINS))
