@@ -151,22 +151,45 @@ async def re_enable_chat(bot, message):
     await db.re_enable_chat(int(chat_))
     temp.BANNED_CHATS.remove(int(chat_))
     await message.reply("Chat Successfully re-enabled")
+    
 
+def get_size(size_in_bytes):
+    """Convert bytes to a human-readable format."""
+    for unit in ['B', 'KB', 'MB', 'GB', 'TB']:
+        if size_in_bytes < 1024:
+            return f"{size_in_bytes:.2f} {unit}"
+        size_in_bytes /= 1024
+    return f"{size_in_bytes:.2f} PB"
 
 @Client.on_message(filters.command('stats') & filters.incoming)
 async def get_ststs(client, message):
     if message.from_user.id in ADMINS:
-        rju = await message.reply('Fetching stats..')
-        total_users = await db.total_users_count()
-        totl_chats = await db.total_chat_count()
-        files = await Media.count_documents()
-        size = await db.get_db_size()
-        free = 536870912 - size
-        size = get_size(size)
-        free = get_size(free)
-        await rju.edit(script.STATUS_TXT.format(files, total_users, totl_chats, size, free))
+        rju = await message.reply("Fetching stats...")
+
+        try:
+            # Fetch statistics from the database
+            total_users = await db.total_users_count()  # Replace with your database function
+            total_chats = await db.total_chat_count()  # Replace with your database function
+            files = await Media.count_documents()      # Replace with your database function
+            size = await db.get_db_size()              # Replace with your database function
+
+            # Calculate free space
+            total_db_limit = 536870912  # Example limit (512 MB)
+            free_space = total_db_limit - size
+
+            # Convert sizes to human-readable format
+            size = get_size(size)
+            free_space = get_size(free_space)
+
+            # Format and send the response
+            status_text = script.STATUS_TXT.format(files, total_users, total_chats, size, free_space)
+            await rju.edit(status_text)
+        except Exception as e:
+            # Handle any errors
+            await rju.edit(f"⚠️ Error while fetching stats: {e}")
     else:
-        await message.reply("Sᴏʀʀʏ Tʜɪs Cᴏᴍᴍᴀɴᴅ Oɴʟʏ Fᴏʀ Mʏ Aᴅᴍɪɴs 👀")
+        await message.reply("🚫 Sorry, this command is restricted to admins!")
+
 
 
 @Client.on_message(filters.command('invite') & filters.user(ADMINS))
