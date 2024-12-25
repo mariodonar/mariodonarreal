@@ -166,7 +166,7 @@ async def get_ststs(bot, message):
         free = get_size(free)
         await rju.edit(script.STATUS_TXT.format(files, total_users, totl_chats, size, free))
     else:
-        await message.reply_text("Sᴏʀʀʏ Tʜɪs Cᴏᴍᴍᴀɴᴅ Oɴʟʏ Fᴏʀ Mʏ Aᴅᴍɪɴs 👀")
+        await message.reply('Sᴏʀʀʏ Tʜɪs Cᴏᴍᴍᴀɴᴅ Oɴʟʏ Fᴏʀ Mʏ Aᴅᴍɪɴs 👀')
 
 
 @Client.on_message(filters.command('invite') & filters.user(ADMINS))
