@@ -161,10 +161,10 @@ async def get_ststs(client, message):
 
         try:
             # Fetch required statistics
-            total_users = await db.total_users_count()  # Replace with your database function
-            total_chats = await db.total_chat_count()  # Replace with your database function
-            files = await Media.count_documents()      # Replace with your database function
-            size = await db.get_db_size()              # Replace with your database function
+            total_users = await db.total_users_count()
+            totl_chats = await db.total_chat_count()
+            files = await Media.count_documents()
+            size = await db.get_db_size()
 
             # Calculate free space
             free = 536870912 - size
@@ -174,7 +174,7 @@ async def get_ststs(client, message):
             free = get_size(free)
 
             # Format the output message
-            status_text = script.STATUS_TXT.format(files, total_users, total_chats, size, free_space)
+            status_text = script.STATUS_TXT.format(files, total_users, total_chats, size, free)
 
             # Update the initial message with stats
             await rju.edit(status_text)
