@@ -155,11 +155,12 @@ async def re_enable_chat(bot, message):
 
 @Client.on_message(filters.command('stats') & filters.incoming)
 async def get_ststs(client, message):
-    if message.from_user.id in ADMINS:
+    # Check if the user is an admin
+    if message.from_user.id in ADMINS:  # Fixed: Replaced `query.from_user.id` with `message.from_user.id`
         rju = await message.reply("Fetching stats...")
 
         try:
-            # Fetch statistics from the database
+            # Fetch required statistics
             total_users = await db.total_users_count()  # Replace with your database function
             total_chats = await db.total_chat_count()  # Replace with your database function
             files = await Media.count_documents()      # Replace with your database function
@@ -172,14 +173,16 @@ async def get_ststs(client, message):
             size = get_size(size)
             free = get_size(free)
 
-            # Format and send the response
-            await rju.edit(script.STATUS_TXT.format(files, total_users, totl_chats, size, free))
+            # Format the output message
+            status_text = script.STATUS_TXT.format(files, total_users, total_chats, size, free)
+
+            # Update the initial message with stats
+            await rju.edit(status_text)
         except Exception as e:
-            # Handle any errors
             await rju.edit(f"⚠️ Error while fetching stats: {e}")
     else:
-        await message.reply("🚫 Sorry, this command is restricted to admins!")
-
+        # Message for non-admin users
+        await message.reply("Sᴏʀʀʏ Tʜɪs Cᴏᴍᴍᴀɴᴅ Oɴʟʏ Fᴏʀ Mʏ Aᴅᴍɪɴs 👀")
 
 
 @Client.on_message(filters.command('invite') & filters.user(ADMINS))
