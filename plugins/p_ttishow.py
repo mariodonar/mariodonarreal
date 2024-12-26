@@ -169,7 +169,7 @@ async def get_ststs(bot, message):
         except Exception as e:
             await rju.edit(f"❌ Failed to fetch stats:\n{e}")
     else:
-        await message.reply("⚠️ **Admins Only**")
+        await rju.edit("⚠️ **Admins Only**")
 
 
 @Client.on_message(filters.command('invite') & filters.user(ADMINS))
