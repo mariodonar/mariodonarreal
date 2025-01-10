@@ -1779,11 +1779,6 @@ async def auto_filter(client, msg, spoll=False):
     else:
         message = msg.message.reply_to_message  # msg will be callback query
         search, files, offset, total_results = spoll
-        m=await message.reply_sticker("CAACAgUAAxkBAAI0wmdm19m4lIexLCfeGlvtyVfTUZgEAAIrAAO8ljUq9-AkUFoHiMQeBA",
-        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(f'Seaching for {search} 🔎', url=f"https://t.me/All_In_One_Linkz")]]) 
-        )
-        settings = await get_settings(message.chat.id)
-        await msg.message.delete()
     pre = 'filep' if settings['file_secure'] else 'file'
     key = f"{message.chat.id}-{message.id}"
     FRESH[key] = search
