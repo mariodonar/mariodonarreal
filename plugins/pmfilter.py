@@ -1748,9 +1748,6 @@ async def auto_filter(client, msg, spoll=False):
             return
         if len(message.text) < 100:
             search = message.text
-            m=await message.reply_sticker("CAACAgUAAxkBAAI0wmdm19m4lIexLCfeGlvtyVfTUZgEAAIrAAO8ljUq9-AkUFoHiMQeBA",
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(f'Seaching for {search} 🔎', url=f"https://t.me/All_In_One_Linkz")]]) 
-            )
             search = search.lower()
             find = search.split(" ")
             search = ""
