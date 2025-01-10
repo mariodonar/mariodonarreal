@@ -1528,7 +1528,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('🪬 Aʙᴏᴜᴛ 🪬', callback_data='about')
                   ]]
         
-        reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.START_TXT.format(query.from_user.mention, gtxt, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
@@ -1545,7 +1544,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ], [
             InlineKeyboardButton('⇋ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇋', callback_data='start')
         ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.HELP_TXT.format(query.from_user.mention),
             reply_markup=reply_markup,
@@ -1564,7 +1562,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ], [
             InlineKeyboardButton('⇋ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇋', callback_data='start')
         ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.ABOUT_TXT.format(temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
@@ -1577,7 +1574,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('⇋ ʙᴀᴄᴋ ⇋', callback_data='about')
         ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.CREDITS_TXT,
             reply_markup=reply_markup,
@@ -1590,7 +1586,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 InlineKeyboardButton('⇇ ʙᴀᴄᴋ', callback_data='about'),
                 InlineKeyboardButton('⟲ ʀᴇғʀᴇsʜ', callback_data='rfrsh')
             ]]
-            reply_markup = InlineKeyboardMarkup(buttons)
             total = await Media.count_documents()
             users = await db.total_users_count()
             chats = await db.total_chat_count()
@@ -1612,7 +1607,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⇇ ʙᴀᴄᴋ', callback_data='about'),
             InlineKeyboardButton('⟲ ʀᴇғʀᴇsʜ', callback_data='rfrsh')
         ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
         total = await Media.count_documents()
         users = await db.total_users_count()
         chats = await db.total_chat_count()
@@ -1630,7 +1624,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             btn = [[
                     InlineKeyboardButton("⇋ ʙᴀᴄᴋ ⇋", callback_data="about")
                   ]]
-            reply_markup = InlineKeyboardMarkup(btn)
             await query.message.edit_text(
                 text=(script.DISCLAIMER_TXT),
                 reply_markup=reply_markup,
