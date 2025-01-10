@@ -59,21 +59,8 @@ async def start(client, message):
             gtxt = "ɢᴏᴏᴅ ᴇᴠᴇɴɪɴɢ 👋"
         else:
             gtxt = "ɢᴏᴏᴅ ɴɪɢʜᴛ 👋"
-        m=await message.reply_text("<i>Error: Something went wrong.\n\nError: Something went wrong.\n\nError: Something went wrong.\n\nError:Something went wrong.\n\nError: Something went wrong.\n\nError: Something went wrong.\n\nError:Something went wrong.\n\nError: Something went wrong.\n\nError: Something went wrong.</i>")
-        await asyncio.sleep(4)
-        await m.edit_text("👀")
-        await asyncio.sleep(0.5)
-        await m.edit_text("⚡")
-        await asyncio.sleep(0.5)
-        await m.edit_text("<b><i>ꜱᴛᴀʀᴛɪɴɢ...</i></b>")
-        await asyncio.sleep(0.4)
-        await m.delete()        
-        m=await message.reply_sticker("CAACAgUAAxkBAAI0wmdm19m4lIexLCfeGlvtyVfTUZgEAAIrAAO8ljUq9-AkUFoHiMQeBA") 
-        await asyncio.sleep(1)
-        await m.delete()
-        await message.reply_photo(
-            photo=random.choice(PICS),
-            caption=script.START_TXT.format(message.from_user.mention, gtxt, temp.U_NAME, temp.B_NAME),
+        await message.reply(
+            text=script.START_TXT.format(message.from_user.mention, gtxt, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -124,21 +111,8 @@ async def start(client, message):
             gtxt = "ɢᴏᴏᴅ ᴇᴠᴇɴɪɴɢ 👋"
         else:
             gtxt = "ɢᴏᴏᴅ ɴɪɢʜᴛ 👋"
-        m=await message.reply_text("<i>Error: Something went wrong.\n\nError: Something went wrong.\n\nError: Something went wrong.\n\nError:Something went wrong.\n\nError: Something went wrong.\n\nError: Something went wrong.\n\nError:Something went wrong.\n\nError: Something went wrong.\n\nError: Something went wrong.</i>")
-        await asyncio.sleep(4)
-        await m.edit_text("👀")
-        await asyncio.sleep(0.5)
-        await m.edit_text("⚡")
-        await asyncio.sleep(0.5)
-        await m.edit_text("<b><i>ꜱᴛᴀʀᴛɪɴɢ...</i></b>")
-        await asyncio.sleep(0.4)
-        await m.delete()        
-        m=await message.reply_sticker("CAACAgUAAxkBAAI0wmdm19m4lIexLCfeGlvtyVfTUZgEAAIrAAO8ljUq9-AkUFoHiMQeBA") 
-        await asyncio.sleep(1)
-        await m.delete()
-        await message.reply_photo(
-            photo=random.choice(PICS),
-            caption=script.START_TXT.format(message.from_user.mention, gtxt, temp.U_NAME, temp.B_NAME),
+        await message.reply(
+            text=script.START_TXT.format(message.from_user.mention, gtxt, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
