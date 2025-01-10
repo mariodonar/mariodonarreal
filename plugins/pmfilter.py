@@ -1528,12 +1528,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('🪬 Aʙᴏᴜᴛ 🪬', callback_data='about')
                   ]]
         
-        await query.message.edit_text(
-            text=script.START_TXT.format(query.from_user.mention, gtxt, temp.U_NAME, temp.B_NAME),
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
-        await query.answer(MSG_ALRT)
+        await query.edit_message_text(text=script.START_TXT.format(user=query.from_user.mention, bot=client.mention), reply_markup=InlineKeyboardMarkup(buttons))
 
     elif query.data == "help":
         buttons = [[
